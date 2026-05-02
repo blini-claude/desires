@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Wordmark } from "@/components/wordmark";
 
 const NAV = [
   { href: "/shop", label: "Shop" },
@@ -44,8 +45,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link href="/" className="brand-mark font-display text-[34px] md:text-[44px] leading-none tracking-[-0.01em] uppercase">
-          Desires
+        <Link href="/" className="brand-mark block w-[140px] md:w-[180px]" aria-label="Desires — Home">
+          <Wordmark className="h-auto w-full text-ink" />
         </Link>
 
         <div className="flex items-center gap-5 text-[12px] tracking-[0.18em] font-mono uppercase">
