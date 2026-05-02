@@ -151,6 +151,45 @@ button {
   display: block;
 }
 
+/* Hero typography matches pleasures small/elegant scale, NOT giant editorial */
+.vc-kicker {
+  font-family: "helvetica_neuelight", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  opacity: 0.9;
+}
+.vc-title {
+  font-family: "helvetica_neuethin", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+.vc-sub {
+  font-family: "helvetica_neuethin", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 28.8px;
+  letter-spacing: 0.6px;
+  margin: 16px 0 0 0;
+  opacity: 0.95;
+  max-width: 44ch;
+}
+.vc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  font-family: "helvetica_neuethin", system-ui, sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  transition: background 220ms ease, color 220ms ease;
+}
+
 /* Pagination bullets — minimal vertical dots on the right */
 .vc-pagination {
   position: absolute;
