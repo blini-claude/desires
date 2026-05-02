@@ -6,35 +6,37 @@ const FILTERS = ["All", "Tops", "Bottoms", "Outerwear", "Knitwear", "Accessories
 
 export default function ShopPage() {
   return (
-    <section className="px-5 md:px-10 pt-12 md:pt-20">
-      <div className="mb-10 md:mb-16">
-        <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted">
+    <section className="pw" style={{ paddingTop: 120, paddingBottom: 80 }}>
+      <header className="mb-10">
+        <div className="vc-desc" style={{ color: "rgba(0,0,0,0.55)" }}>
           Drop 01 / Spring–Summer 2026
-        </p>
-        <h1 className="font-display uppercase text-[clamp(56px,12vw,200px)] mt-2">
-          Shop
-        </h1>
-      </div>
+        </div>
+        <h1 className="vc-title" style={{ color: "#000", marginTop: 6 }}>Shop</h1>
+      </header>
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10 border-b border-line pb-4 font-mono text-[11px] tracking-[0.22em] uppercase">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10 border-b border-line pb-4">
         {FILTERS.map((f) => (
-          <button key={f} className="link-grow text-ink/80 data-[active=true]:text-ink" data-active={f === "All"}>
+          <button
+            key={f}
+            className="vc-desc"
+            style={{ color: f === "All" ? "#000" : "rgba(0,0,0,0.55)", background: "transparent", border: 0, padding: 0, cursor: "pointer" }}
+          >
             {f}
           </button>
         ))}
-        <span className="ml-auto text-muted">{PRODUCTS.length} items</span>
+        <span className="ml-auto vc-desc" style={{ color: "rgba(0,0,0,0.45)" }}>
+          {PRODUCTS.length} items
+        </span>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
         {PRODUCTS.map((p) => (
           <ProductCard key={p.handle} p={p} />
         ))}
       </div>
 
       <div className="mt-24 text-center">
-        <Link href="/lookbook" className="font-mono text-[11px] tracking-[0.22em] uppercase link-grow">
-          See the Lookbook →
-        </Link>
+        <Link href="/lookbook" className="btn">See the Lookbook</Link>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { MarqueeBar } from "@/components/marquee-bar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://desires.blini.world"),
@@ -27,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <MarqueeBar />
         <SiteHeader />
         <main className="flex-1 relative">{children}</main>
         <SiteFooter />

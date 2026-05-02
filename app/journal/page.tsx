@@ -8,17 +8,20 @@ const ENTRIES = [
 
 export default function JournalPage() {
   return (
-    <section className="px-5 md:px-10 pt-12 md:pt-20 pb-32">
-      <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted">Journal</p>
-      <h1 className="font-display uppercase text-[clamp(56px,12vw,200px)] mt-2">
-        Notes
-      </h1>
-      <ul className="mt-16 divide-y divide-line border-y border-line">
+    <section className="pw" style={{ paddingTop: 120, paddingBottom: 100 }}>
+      <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)" }}>Journal</p>
+      <h1 className="vc-title" style={{ color: "#000", marginTop: 6 }}>Notes</h1>
+
+      <ul className="mt-12 divide-y divide-line border-y border-line">
         {ENTRIES.map((e) => (
-          <li key={e.slug} className="py-8 grid md:grid-cols-12 gap-4 items-baseline group hover:bg-ink/[.02] transition-colors px-2 -mx-2">
-            <span className="md:col-span-2 font-mono text-[11px] tracking-[0.22em] uppercase text-muted">{e.date}</span>
-            <h2 className="md:col-span-8 text-[clamp(24px,3.5vw,42px)] tracking-tight">{e.title}</h2>
-            <span className="md:col-span-2 font-mono text-[11px] tracking-[0.22em] uppercase text-muted md:text-right">{e.read} →</span>
+          <li key={e.slug} className="py-7 grid md:grid-cols-12 gap-4 items-baseline">
+            <span className="md:col-span-2 vc-desc" style={{ color: "rgba(0,0,0,0.55)" }}>
+              {e.date}
+            </span>
+            <h2 className="md:col-span-8 vc-title" style={{ color: "#000" }}>{e.title}</h2>
+            <span className="md:col-span-2 vc-desc md:text-right" style={{ color: "rgba(0,0,0,0.55)" }}>
+              {e.read} →
+            </span>
           </li>
         ))}
       </ul>

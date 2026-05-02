@@ -16,50 +16,51 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      data-scrolled={scrolled}
-      className="shrink-on-scroll sticky top-0 z-[5] bg-bg/0 border-b border-line/40 transition-all duration-300 px-5 md:px-10 py-4"
-    >
-      <div className="flex items-center justify-between gap-6">
+    <header className="site-header" data-scrolled={scrolled}>
+      <div className="site-header__inner">
         <button
           aria-label="Menu"
-          className="md:hidden flex flex-col gap-1.5"
+          className="site-header__menu-btn"
           onClick={() => setOpen((s) => !s)}
         >
-          <span className="block h-px w-6 bg-ink" />
-          <span className="block h-px w-6 bg-ink" />
+          <span />
+          <span />
         </button>
 
-        <nav className="hidden md:flex items-center gap-7 text-[12px] tracking-[0.18em] font-mono uppercase">
+        <nav className="site-header__nav">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="link-grow">
+            <Link key={n.href} href={n.href} className="site-header__link">
               {n.label}
             </Link>
           ))}
         </nav>
 
-        <Link href="/" className="brand-mark block w-[140px] md:w-[180px]" aria-label="Desires — Home">
-          <Wordmark className="h-auto w-full text-ink" />
+        <Link href="/" className="site-header__brand" aria-label="Desires — Home">
+          <Wordmark />
         </Link>
 
-        <div className="flex items-center gap-5 text-[12px] tracking-[0.18em] font-mono uppercase">
-          <Link href="/account" className="hidden md:inline link-grow">Account</Link>
-          <Link href="/search" aria-label="Search" className="link-grow">⌕</Link>
-          <Link href="/cart" className="link-grow">Bag <span className="text-muted">(0)</span></Link>
+        <div className="site-header__right">
+          <Link href="/account" className="site-header__link site-header__link--hide-mobile">
+            Account
+          </Link>
+          <Link href="/search" aria-label="Search" className="site-header__link">⌕</Link>
+          <Link href="/cart" className="site-header__link">
+            Cart <span className="site-header__cart-count">(0)</span>
+          </Link>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden mt-4 grid gap-3 text-[14px] tracking-[0.18em] font-mono uppercase">
+        <div className="site-header__drawer">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} onClick={() => setOpen(false)}>
+            <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="site-header__link">
               {n.label}
             </Link>
           ))}

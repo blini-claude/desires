@@ -50,25 +50,25 @@ export default function HomePage() {
     <>
       <HeroCarousel slides={HERO_SLIDES} />
 
-      <section id="signup" className="relative min-h-[88vh] flex items-center justify-center overflow-hidden bg-bg">
-        <div className="relative z-[2] px-5 md:px-12 text-center max-w-3xl">
-          <h3 className="text-muted">Get on the list</h3>
-          <h2 className="mt-4">Drops First. No Noise.</h2>
-          <form className="mt-10 mx-auto max-w-md flex border-b border-line" action="#" method="post">
-            <input
-              type="email"
-              required
-              placeholder="email@yours.com"
-              className="flex-1 bg-transparent py-3 outline-none placeholder:text-muted"
-            />
-            <button className="px-4 py-3 hover:text-accent transition-colors uppercase">
-              Sign Up
-            </button>
-          </form>
-          <p className="mt-4 text-muted">
-            One mail per drop. Unsubscribe in two clicks.
-          </p>
-        </div>
+      <section id="signup" className="pw" style={{ paddingTop: 100, paddingBottom: 100, textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+        <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)", textTransform: "uppercase" }}>
+          Get on the list
+        </p>
+        <h2 className="vc-title" style={{ color: "#000", marginTop: 8 }}>Drops First. No Noise.</h2>
+        <form className="mt-8 mx-auto flex border-b border-line" action="#" method="post" style={{ maxWidth: 420 }}>
+          <input
+            type="email"
+            required
+            placeholder="email@yours.com"
+            className="flex-1 bg-transparent py-3 outline-none"
+          />
+          <button type="submit" style={{ padding: "12px 18px", textTransform: "uppercase", color: "#000" }}>
+            Sign Up →
+          </button>
+        </form>
+        <p className="mt-4" style={{ color: "rgba(0,0,0,0.55)" }}>
+          One mail per drop. Unsubscribe in two clicks.
+        </p>
       </section>
     </>
   );

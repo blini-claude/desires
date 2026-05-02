@@ -2,18 +2,14 @@ export const metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <section className="px-5 md:px-10 pt-12 md:pt-20 pb-32 max-w-[1400px]">
-      <div className="mb-12">
-        <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted">
-          About
-        </p>
-        <h1 className="font-display uppercase text-[clamp(64px,14vw,240px)] mt-2 leading-[0.85]">
-          A Label<br />For Want.
-        </h1>
-      </div>
+    <section className="pw" style={{ paddingTop: 120, paddingBottom: 100, maxWidth: 1100 }}>
+      <header className="mb-12">
+        <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)" }}>About</p>
+        <h1 className="vc-title" style={{ color: "#000", marginTop: 6 }}>A Label For Want.</h1>
+      </header>
 
-      <div className="grid md:grid-cols-12 gap-x-6 gap-y-12">
-        <div className="md:col-span-7 space-y-6 text-[16px] md:text-[18px] leading-relaxed text-ink-soft">
+      <div className="grid md:grid-cols-12 gap-x-8 gap-y-10">
+        <div className="md:col-span-7 space-y-5">
           <p>
             Desires is a small streetwear label working in batches small enough
             to know each piece by name. Cut, sewn, and finished by people in the
@@ -29,29 +25,24 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <aside className="md:col-span-5 md:pl-10 md:border-l md:border-line space-y-8 text-[12px] font-mono uppercase tracking-[0.2em]">
+        <aside className="md:col-span-5 md:pl-10 md:border-l md:border-line space-y-8">
           <div>
-            <p className="text-muted mb-3">Made In</p>
+            <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)", textTransform: "uppercase", marginBottom: 6 }}>Made In</p>
             <p>Portugal · Italy · Japan</p>
           </div>
           <div>
-            <p className="text-muted mb-3">Studio</p>
-            <p>
-              Los Angeles, CA<br />
-              By appointment.
-            </p>
+            <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)", textTransform: "uppercase", marginBottom: 6 }}>Studio</p>
+            <p>Los Angeles, CA<br />By appointment.</p>
           </div>
           <div>
-            <p className="text-muted mb-3">Press · Wholesale</p>
+            <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)", textTransform: "uppercase", marginBottom: 6 }}>Press · Wholesale</p>
             <p>hello@desires.today</p>
           </div>
         </aside>
       </div>
 
-      <div className="mt-32 border-t border-line pt-10">
-        <p className="font-display uppercase text-[clamp(36px,6vw,86px)] leading-[1.02] max-w-[18ch]">
-          Wear loud. Last long.
-        </p>
+      <div className="mt-24 border-t border-line pt-10">
+        <p className="vc-title" style={{ color: "#000" }}>Wear loud. Last long.</p>
       </div>
     </section>
   );

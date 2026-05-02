@@ -17,41 +17,60 @@ const fmt = (n: number, c: string) =>
 
 export function ProductCard({ p }: { p: Product }) {
   return (
-    <Link href={`/shop/${p.handle}`} className="group block">
-      <div className="relative aspect-[4/5] overflow-hidden bg-line/40 swap-stack">
+    <Link href={`/shop/${p.handle}`} className="block group">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f5f3]">
         {p.badge && (
-          <span className="absolute left-3 top-3 z-[2] font-mono text-[10px] tracking-[0.18em] uppercase bg-bg/90 text-ink px-2 py-1">
+          <span
+            className="absolute left-3 top-3 z-[2] px-2 py-1"
+            style={{
+              fontFamily: "helvetica_neuethin, system-ui, sans-serif",
+              fontSize: 11,
+              letterSpacing: 0.6,
+              textTransform: "uppercase",
+              background: "rgba(255,255,255,0.94)",
+              color: "#000",
+            }}
+          >
             {p.badge}
           </span>
         )}
         {p.soldOut && (
-          <span className="absolute right-3 top-3 z-[2] font-mono text-[10px] tracking-[0.18em] uppercase bg-ink/90 text-bg px-2 py-1">
+          <span
+            className="absolute right-3 top-3 z-[2] px-2 py-1"
+            style={{
+              fontFamily: "helvetica_neuethin, system-ui, sans-serif",
+              fontSize: 11,
+              letterSpacing: 0.6,
+              textTransform: "uppercase",
+              background: "rgba(0,0,0,0.9)",
+              color: "#fff",
+            }}
+          >
             Sold out
           </span>
         )}
-        {/* Image stack — front fades to back on hover */}
         <img
-          className="front absolute inset-0 h-full w-full object-cover"
           src={p.front}
           alt={p.name}
           loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
         />
         <img
-          className="back absolute inset-0 h-full w-full object-cover opacity-0"
           src={p.back}
           alt=""
           aria-hidden
           loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       </div>
-      <div className="mt-3 flex items-start justify-between gap-3">
+      <div className="mt-4 flex items-baseline justify-between gap-3">
         <div className="min-w-0">
-          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted">
-            {p.category}
-          </p>
-          <h3 className="mt-1 text-[14px] tracking-tight truncate">{p.name}</h3>
+          <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)" }}>{p.category}</p>
+          <h3 className="vc-title" style={{ color: "#000" }}>{p.name}</h3>
         </div>
-        <span className="text-[14px] tabular-nums">{fmt(p.price, p.currency)}</span>
+        <span className="vc-title" style={{ color: "#000", whiteSpace: "nowrap" }}>
+          {fmt(p.price, p.currency)}
+        </span>
       </div>
     </Link>
   );
