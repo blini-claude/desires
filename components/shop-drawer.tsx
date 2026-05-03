@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { PRODUCTS } from "@/lib/products";
 
 const CATEGORIES = [
   { label: "Tops",        href: "/shop?c=Tops" },
@@ -37,8 +36,6 @@ export function ShopDrawer({ open, onClose }: { open: boolean; onClose: () => vo
       document.body.style.overflow = "";
     };
   }, [open, onClose]);
-
-  const featured = PRODUCTS.find((p) => p.handle === "atlas-work-jacket") ?? PRODUCTS[0];
 
   return (
     <>
@@ -97,28 +94,6 @@ export function ShopDrawer({ open, onClose }: { open: boolean; onClose: () => vo
             </ul>
           </div>
 
-          <div className="dx-drawer__featured">
-            <p className="dx-eyebrow dx-drawer__heading">Featured</p>
-            <Link
-              href={`/shop/${featured.handle}`}
-              onClick={onClose}
-              className="dx-drawer__feature-card"
-            >
-              <div className="dx-drawer__feature-media">
-                <img src={featured.front} alt={featured.name} />
-              </div>
-              <div className="dx-drawer__feature-row">
-                <div>
-                  <p className="dx-card__cat">{featured.category}</p>
-                  <p className="dx-card__name">{featured.name}</p>
-                </div>
-                <span className="dx-card__price dx-num">${featured.price}</span>
-              </div>
-            </Link>
-            <p className="dx-body" style={{ color: "rgba(0,0,0,0.6)", marginTop: 14 }}>
-              The drop hero. Cut-and-sewn in Portugal, broken-in finish, runs short. Twenty cut.
-            </p>
-          </div>
         </div>
       </aside>
     </>
