@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, PRODUCTS } from "@/lib/products";
-
-const SIZES = ["XS", "S", "M", "L", "XL", "XXL"] as const;
-
-const fmt = (n: number, c: string) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: c, maximumFractionDigits: 0 }).format(n);
+import { PDPRail, RecentlyViewed } from "@/components/pdp-rail";
 
 export async function generateStaticParams() {
   return PRODUCTS.map((p) => ({ handle: p.handle }));
 }
+
+const fmt = (n: number, c: string) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: c, maximumFractionDigits: 0 }).format(n);
 
 export default async function ProductPage({
   params,
@@ -43,63 +42,7 @@ export default async function ProductPage({
             ))}
           </div>
 
-          <aside className="dx-pdp__rail">
-            <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)" }}>{p.category}</p>
-            <h1 className="dx-h2" style={{ marginTop: 8 }}>{p.name}</h1>
-            <p className="dx-md dx-num" style={{ marginTop: 14 }}>{fmt(p.price, p.currency)}</p>
-
-            <div style={{ marginTop: 36 }}>
-              <p className="dx-eyebrow" style={{ marginBottom: 12, color: "rgba(0,0,0,0.55)" }}>Size</p>
-              <div className="dx-rail dx-rail--6">
-                {SIZES.map((s) => (
-                  <button key={s} className="dx-rail__cell" disabled={p.soldOut}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <button
-              disabled={p.soldOut}
-              className="dx-btn dx-btn--solid dx-btn--block"
-              style={{ marginTop: 24 }}
-            >
-              {p.soldOut ? "Sold Out" : "Add to Bag"}
-            </button>
-
-            <div style={{ marginTop: 40 }}>
-              <p className="dx-body">
-                Cut and sewn in small batches. Garment-washed for hand-feel and a broken-in drape. Designed to wear loud and last long.
-              </p>
-              <ul style={{ marginTop: 20, display: "grid", gap: 8 }}>
-                {[
-                  "100% mid-weight cotton, brushed inside",
-                  "Reinforced seams",
-                  "Embroidered Desires mark",
-                  "Made in Portugal",
-                ].map((line) => (
-                  <li key={line} className="dx-meta dx-meta--ink" style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 8 }}>
-                    <span>—</span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <details style={{ marginTop: 28, paddingTop: 16 }}>
-              <summary style={{ cursor: "pointer", listStyle: "none" }} className="dx-eyebrow">Shipping & Returns</summary>
-              <p className="dx-body" style={{ marginTop: 12 }}>
-                Worldwide shipping. Free over $150. Returns accepted within 14 days, unworn, tags on.
-              </p>
-            </details>
-
-            <details style={{ marginTop: 8, paddingTop: 16 }}>
-              <summary style={{ cursor: "pointer", listStyle: "none" }} className="dx-eyebrow">Fit & Care</summary>
-              <p className="dx-body" style={{ marginTop: 12 }}>
-                Relaxed fit. Sized true. Cold wash inside-out, hang to dry. Iron low.
-              </p>
-            </details>
-          </aside>
+          <PDPRail p={p} />
         </div>
 
         <hr className="dx-divider" />
@@ -120,16 +63,16 @@ export default async function ProductPage({
                   {m.soldOut && <span className="dx-card__sold">Sold Out</span>}
                 </div>
                 <div className="dx-card__row">
-                  <div>
-                    <p className="dx-card__cat">{m.category}</p>
-                    <p className="dx-card__name">{m.name}</p>
-                  </div>
+                  <p className="dx-card__cat">{m.category}</p>
+                  <p className="dx-card__name">{m.name}</p>
                   <span className="dx-card__price dx-num">{fmt(m.price, m.currency)}</span>
                 </div>
               </Link>
             ))}
           </div>
         </section>
+
+        <RecentlyViewed currentHandle={p.handle} />
       </div>
     </article>
   );

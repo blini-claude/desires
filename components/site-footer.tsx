@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CountrySelector } from "@/components/country-selector";
 
 export function SiteFooter() {
   return (
@@ -57,7 +58,8 @@ export function SiteFooter() {
       <div className="site-footer__bar">
         <div className="pw flex flex-col md:flex-row items-center justify-between gap-3" style={{ paddingTop: 18, paddingBottom: 18 }}>
           <span style={{ color: "rgba(255,255,255,0.45)" }}>© {new Date().getFullYear()} Desires. All wrongs reserved.</span>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
+            <CountrySelector />
             <Link href="/legal/terms">Terms</Link>
             <Link href="/legal/privacy">Privacy</Link>
             <Link href="https://instagram.com">Instagram</Link>

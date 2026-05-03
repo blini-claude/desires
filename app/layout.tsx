@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { AnnouncementBar } from "@/components/announcement-bar";
+import { CartProvider } from "@/lib/cart";
+import { CartDrawer } from "@/components/cart-drawer";
+import { NewsletterModal } from "@/components/newsletter-modal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://desires.blini.world"),
@@ -26,9 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <SiteHeader />
-        <main className="flex-1 relative">{children}</main>
-        <SiteFooter />
+        <CartProvider>
+          <AnnouncementBar />
+          <SiteHeader />
+          <main className="flex-1 relative">{children}</main>
+          <SiteFooter />
+          <CartDrawer />
+          <NewsletterModal />
+        </CartProvider>
       </body>
     </html>
   );

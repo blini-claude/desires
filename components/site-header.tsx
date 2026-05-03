@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Wordmark } from "@/components/wordmark";
 import { ShopDrawer } from "@/components/shop-drawer";
+import { useCart } from "@/lib/cart";
 
 const NAV: { href: string; label: string; isShop?: boolean }[] = [
   { href: "/shop", label: "Shop", isShop: true },
@@ -19,6 +20,7 @@ export function SiteHeader() {
   const [shopOpen, setShopOpen] = useState(false);
   const pathname = usePathname();
   const lightBg = pathname !== "/";
+  const { count, setOpen: setCartOpen } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -76,9 +78,14 @@ export function SiteHeader() {
               Account
             </Link>
             <Link href="/search" aria-label="Search" className="site-header__link">⌕</Link>
-            <Link href="/cart" className="site-header__link">
-              Cart <span className="site-header__cart-count">(0)</span>
-            </Link>
+            <button
+              type="button"
+              className="site-header__link site-header__link--btn"
+              onClick={() => setCartOpen(true)}
+              aria-haspopup="dialog"
+            >
+              Cart <span className="site-header__cart-count">({String(count).padStart(2, "0")})</span>
+            </button>
           </div>
         </div>
 

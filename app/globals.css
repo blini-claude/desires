@@ -1162,6 +1162,247 @@ button.btn {
   .dx-cart__summary { position: sticky; top: 88px; }
 }
 
+/* ---- Announcement bar ---- */
+.dx-announce {
+  position: relative;
+  z-index: 60;
+  background: #000;
+  color: #fff;
+  height: 32px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.dx-announce__track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: dxMarquee 60s linear infinite;
+  will-change: transform;
+}
+.dx-announce__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: "helvetica_neuemedium", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+@keyframes dxMarquee {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-33.333%, 0, 0); }
+}
+body:has(.dx) .site-header { top: 32px !important; }
+.site-header { transition: top 220ms ease, background 220ms ease, color 220ms ease, backdrop-filter 220ms ease !important; }
+
+/* ---- Sort dropdown ---- */
+.dx-sort__list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  min-width: 220px;
+  z-index: 20;
+}
+.dx-sort__opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 10px 18px;
+  font-family: "helvetica_neuelight", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: #000;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.dx-sort__opt:hover { background: #f6f5f3; }
+.dx-sort__opt[aria-selected="true"] { background: #000; color: #fff; }
+
+/* ---- Quick add overlay on product card ---- */
+.dx-card { position: relative; }
+.dx-quick {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+.dx-quick[data-open="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .dx-quick { display: none; }
+}
+.dx-quick__label {
+  font-family: "helvetica_neuemedium", system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 8px;
+}
+.dx-quick__sizes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.dx-quick__size {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 8px 0;
+  font-family: "helvetica_neuemedium", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+.dx-quick__size:hover { background: #000; color: #fff; }
+
+/* ---- Cart drawer (right side) ---- */
+.dx-drawer--right {
+  left: auto !important;
+  right: 0 !important;
+  transform: translateX(100%) !important;
+  border-right: 0 !important;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.06) !important;
+  width: min(440px, 96vw) !important;
+}
+.dx-drawer--right[data-open="true"] {
+  transform: translateX(0) !important;
+}
+
+/* ---- Newsletter modal ---- */
+.dx-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.dx-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  border: 0;
+  cursor: pointer;
+}
+.dx-modal__panel {
+  position: relative;
+  background: #fff;
+  width: min(460px, 92vw);
+  padding: 36px 32px 28px;
+  z-index: 1;
+  animation: dxRise 280ms cubic-bezier(.2,.7,.2,1);
+}
+@keyframes dxRise {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.dx-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: 0;
+  font-family: "helvetica_neuethin", system-ui, sans-serif;
+  font-weight: 100;
+  font-size: 28px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* ---- Country selector ---- */
+.dx-country { position: relative; }
+.dx-country__btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,0.85);
+  font-family: "helvetica_neuemedium", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  padding: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+.dx-country__btn:hover { color: #fff; }
+.dx-country__list {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin: 0 0 8px;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+  color: #000;
+  min-width: 220px;
+  box-shadow: 0 -12px 32px rgba(0,0,0,0.18);
+  z-index: 30;
+}
+.dx-country__opt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 10px 16px;
+  font-family: "helvetica_neuelight", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: #000 !important;
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.dx-country__opt:hover { background: #f6f5f3; }
+.dx-country__opt[aria-selected="true"] { background: #000; color: #fff !important; }
+
+/* ---- Sticky mini PDP ---- */
+.dx-mini-pdp {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -12px 32px rgba(0,0,0,0.06);
+  transform: translate3d(0, 100%, 0);
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1);
+}
+.dx-mini-pdp[data-visible="true"] { transform: translate3d(0, 0, 0); }
+@media (max-width: 768px) {
+  .dx-mini-pdp { font-size: 12px; }
+  .dx-mini-pdp .dx-btn { padding: 12px 14px !important; font-size: 11px !important; }
+}
+
 /* ---- Helpers ---- */
 .dx-divider { height: 0; margin: clamp(60px, 8vw, 120px) 0; border: 0; }
 .dx-bleed-quote {
