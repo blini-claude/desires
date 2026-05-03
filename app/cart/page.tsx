@@ -11,12 +11,12 @@ export default function CartPage() {
             <p className="dx-eyebrow">Bag</p>
             <p className="dx-meta dx-meta--ink dx-num">00 items · $0</p>
           </div>
-          <h1 className="dx-mega">Empty<span style={{ opacity: 0.35 }}>.</span></h1>
+          <h1 className="dx-h2">Your bag is empty</h1>
         </header>
 
         <div className="dx-cart" style={{ marginTop: "clamp(40px,6vw,80px)" }}>
           <div>
-            <p className="dx-body-lg" style={{ maxWidth: 560 }}>
+            <p className="dx-body" style={{ maxWidth: 560 }}>
               Nothing in the bag yet. Drop 01 is twenty pieces and most are running thin.
               Grab something before the run is gone.
             </p>
@@ -48,7 +48,7 @@ export default function CartPage() {
 
           <aside className="dx-cart__summary">
             <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)" }}>Summary</p>
-            <h2 className="dx-md" style={{ marginTop: 8 }}>Your Bag</h2>
+            <h2 className="dx-h2" style={{ marginTop: 8 }}>Your Bag</h2>
 
             <ul style={{ marginTop: 22, display: "grid", gap: 12 }}>
               {[
@@ -62,8 +62,8 @@ export default function CartPage() {
                 </li>
               ))}
               <li style={{ display: "flex", justifyContent: "space-between", paddingTop: 6 }}>
-                <span className="dx-md">Total</span>
-                <span className="dx-md dx-num">$0</span>
+                <span className="dx-h2">Total</span>
+                <span className="dx-h2 dx-num">$0</span>
               </li>
             </ul>
 

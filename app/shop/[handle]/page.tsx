@@ -45,8 +45,8 @@ export default async function ProductPage({
 
           <aside className="dx-pdp__rail">
             <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)" }}>{p.category}</p>
-            <h1 className="dx-xl" style={{ marginTop: 14 }}>{p.name}</h1>
-            <p className="dx-md dx-num" style={{ marginTop: 18 }}>{fmt(p.price, p.currency)}</p>
+            <h1 className="dx-h2" style={{ marginTop: 8 }}>{p.name}</h1>
+            <p className="dx-md dx-num" style={{ marginTop: 14 }}>{fmt(p.price, p.currency)}</p>
 
             <div style={{ marginTop: 36 }}>
               <p className="dx-eyebrow" style={{ marginBottom: 12, color: "rgba(0,0,0,0.55)" }}>Size</p>
@@ -109,7 +109,7 @@ export default async function ProductPage({
             <p className="dx-eyebrow">More from the drop</p>
             <Link href="/shop" className="dx-btn dx-btn--ghost">All pieces</Link>
           </div>
-          <h2 className="dx-lg" style={{ marginBottom: 32 }}>Pair With.</h2>
+          <h2 className="dx-h2" style={{ marginBottom: 24 }}>Pair With</h2>
           <div className="dx-grid-shop">
             {more.map((m) => (
               <Link key={m.handle} href={`/shop/${m.handle}`} className="dx-card">

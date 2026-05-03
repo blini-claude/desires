@@ -6,7 +6,7 @@ export default function AboutPage() {
       <div className="pw dx-page">
         <header className="dx-page__head">
           <p className="dx-eyebrow">About</p>
-          <h1 className="dx-mega">A Label<br />For Want<span style={{ opacity: 0.35 }}>.</span></h1>
+          <h1 className="dx-h1">A Label For Want</h1>
         </header>
 
         <div style={{
@@ -46,10 +46,10 @@ export default function AboutPage() {
         </div>
 
         <div className="dx-bleed-quote">
-          <p className="dx-xl">
-            &ldquo;Cut once.<br />Sewn slow.<br />Wear loud.&rdquo;
+          <p className="dx-h2">
+            &ldquo;Cut once. Sewn slow. Wear loud.&rdquo;
           </p>
-          <p className="dx-eyebrow" style={{ marginTop: 28, color: "rgba(0,0,0,0.55)" }}>— The Cutting Room</p>
+          <p className="dx-eyebrow" style={{ marginTop: 16, color: "rgba(0,0,0,0.55)" }}>— The Cutting Room</p>
         </div>
 
         <hr className="dx-divider" />
@@ -68,20 +68,18 @@ export default function AboutPage() {
                 ["03", "We post it. We don't restock the same exact thing twice."],
                 ["04", "When it's gone, it's gone. The next thing is already in pattern."],
               ].map(([n, copy]) => (
-                <li key={n} style={{ display: "grid", gridTemplateColumns: "64px 1fr", gap: 16, alignItems: "baseline", borderTop: "1px solid #000", paddingTop: 16 }}>
+                <li key={n} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 16, alignItems: "baseline", borderTop: "1px solid #000", paddingTop: 16 }}>
                   <span className="dx-md dx-num">{n}</span>
-                  <span className="dx-body-lg">{copy}</span>
+                  <span className="dx-body">{copy}</span>
                 </li>
               ))}
             </ol>
           </div>
         </div>
 
-        <div style={{ marginTop: "clamp(80px,10vw,140px)", textAlign: "center" }}>
-          <p className="dx-mega" style={{ fontSize: "clamp(48px,12vw,180px)" }}>
-            Wear loud.<br />Last long.
-          </p>
-          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 36 }}>Shop the Drop</a>
+        <div style={{ marginTop: "clamp(60px,8vw,100px)", textAlign: "center" }}>
+          <p className="dx-h2">Wear loud. Last long.</p>
+          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 24 }}>Shop the Drop</a>
         </div>
       </div>
 

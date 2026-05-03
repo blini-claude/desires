@@ -19,8 +19,8 @@ export default function JournalPage() {
             <p className="dx-eyebrow">Journal</p>
             <p className="dx-meta dx-meta--ink dx-num">{ENTRIES.length} entries</p>
           </div>
-          <h1 className="dx-mega">Notes<span style={{ opacity: 0.35 }}>.</span></h1>
-          <p className="dx-body-lg" style={{ maxWidth: 720, marginTop: 24 }}>
+          <h1 className="dx-h1">Journal · Notes from the Studio</h1>
+          <p className="dx-body" style={{ maxWidth: 640, marginTop: 16 }}>
             Studio dispatches, field reports, and the occasional rant. Long-form when it earns it.
           </p>
         </header>
@@ -39,7 +39,7 @@ export default function JournalPage() {
 
         <div style={{ textAlign: "center" }}>
           <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)" }}>Subscribe</p>
-          <h2 className="dx-lg" style={{ marginTop: 14 }}>One Note Per Drop.</h2>
+          <h2 className="dx-h2" style={{ marginTop: 8 }}>One Note Per Drop</h2>
           <form action="#" method="post" style={{
             display: "flex",
             maxWidth: 460,

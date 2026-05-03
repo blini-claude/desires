@@ -25,8 +25,8 @@ export default function LookbookPage() {
             <p className="dx-eyebrow">Lookbook · SS26</p>
             <p className="dx-meta dx-meta--ink dx-num">{LOOKS.length} looks · 1 weekend</p>
           </div>
-          <h1 className="dx-mega">Drop 01<span style={{ opacity: 0.35 }}>.</span></h1>
-          <p className="dx-body-lg" style={{ maxWidth: 720, marginTop: 24 }}>
+          <h1 className="dx-h1">Lookbook · Drop 01 — SS26</h1>
+          <p className="dx-body" style={{ maxWidth: 640, marginTop: 16 }}>
             Eight looks shot across one weekend. No studio. No retouching the air out of it.
             The clothes, the bodies that wear them, the places they end up.
           </p>
@@ -59,8 +59,8 @@ export default function LookbookPage() {
 
         <div style={{ textAlign: "center" }}>
           <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)" }}>Now Available</p>
-          <h2 className="dx-xl" style={{ marginTop: 16 }}>Wear the Want.</h2>
-          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 28 }}>Shop the Drop</a>
+          <h2 className="dx-h2" style={{ marginTop: 8 }}>Wear the Want</h2>
+          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 24 }}>Shop the Drop</a>
         </div>
       </div>
     </section>
