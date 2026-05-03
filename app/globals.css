@@ -656,34 +656,33 @@ button.btn {
 .dx input::placeholder,
 .dx textarea::placeholder { color: rgba(0,0,0,0.45); }
 
-/* ---- Type scale (pleasures-faithful: restrained, images carry weight) ---- */
-/* Page H1 — same 12px label pleasures uses */
+/* ---- Type scale — restrained pleasures-influenced, but H1 > body for sane hierarchy ---- */
+/* Page H1 — 28-40px thin, sits above body 16px */
 .dx .dx-h1 {
-  font-family: "helvetica_neuemedium", system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
+  font-family: "helvetica_neuethin", system-ui, sans-serif;
+  font-weight: 100;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.1;
+  letter-spacing: 0.2px;
   color: #000;
   margin: 0;
 }
-/* Section H2 — 24px thin, used sparingly */
+/* Section H2 — 20-26px thin */
 .dx .dx-h2 {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: 24px;
-  line-height: 1.3;
-  letter-spacing: 0.6px;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.2;
+  letter-spacing: 0.4px;
   color: #000;
   margin: 0;
 }
-/* Mega — only when intentional, capped at 32px */
+/* Mega — emphatic moments only (about pull-quote, closing lines) */
 .dx .dx-mega {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(20px, 2.6vw, 32px);
-  line-height: 1.05;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.08;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   color: #000;
@@ -692,8 +691,8 @@ button.btn {
 .dx .dx-xl {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(20px, 2vw, 28px);
-  line-height: 1.2;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.18;
   letter-spacing: 0.2px;
   color: #000;
   margin: 0;
@@ -701,8 +700,8 @@ button.btn {
 .dx .dx-lg {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(16px, 1.6vw, 22px);
-  line-height: 1.25;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.3;
   letter-spacing: 0.4px;
   color: #000;
   margin: 0;

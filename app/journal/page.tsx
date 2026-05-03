@@ -19,7 +19,7 @@ export default function JournalPage() {
             <p className="dx-eyebrow">Journal</p>
             <p className="dx-meta dx-meta--ink dx-num">{ENTRIES.length} entries</p>
           </div>
-          <h1 className="dx-h1">Journal · Notes from the Studio</h1>
+          <h1 className="dx-h1">Notes from the Studio</h1>
           <p className="dx-body" style={{ maxWidth: 640, marginTop: 16 }}>
             Studio dispatches, field reports, and the occasional rant. Long-form when it earns it.
           </p>

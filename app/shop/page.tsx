@@ -26,7 +26,7 @@ export default function ShopPage() {
             <p className="dx-eyebrow">Drop 01 — SS26</p>
             <p className="dx-meta dx-meta--ink dx-num">{String(PRODUCTS.length).padStart(2, "0")} pieces</p>
           </div>
-          <h1 className="dx-h1">Shop · Drop 01 — SS26</h1>
+          <h1 className="dx-h1">Shop the Drop</h1>
         </header>
       </div>
 

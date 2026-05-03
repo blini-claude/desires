@@ -46,10 +46,10 @@ export default function AboutPage() {
         </div>
 
         <div className="dx-bleed-quote">
-          <p className="dx-h2">
-            &ldquo;Cut once. Sewn slow. Wear loud.&rdquo;
+          <p className="dx-mega">
+            &ldquo;Cut once.<br />Sewn slow.<br />Wear loud.&rdquo;
           </p>
-          <p className="dx-eyebrow" style={{ marginTop: 16, color: "rgba(0,0,0,0.55)" }}>— The Cutting Room</p>
+          <p className="dx-eyebrow" style={{ marginTop: 24, color: "rgba(0,0,0,0.55)" }}>— The Cutting Room</p>
         </div>
 
         <hr className="dx-divider" />
@@ -78,8 +78,8 @@ export default function AboutPage() {
         </div>
 
         <div style={{ marginTop: "clamp(60px,8vw,100px)", textAlign: "center" }}>
-          <p className="dx-h2">Wear loud. Last long.</p>
-          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 24 }}>Shop the Drop</a>
+          <p className="dx-mega">Wear loud.<br />Last long.</p>
+          <a href="/shop" className="dx-btn dx-btn--solid" style={{ marginTop: 32 }}>Shop the Drop</a>
         </div>
       </div>
 

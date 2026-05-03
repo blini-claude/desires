@@ -25,7 +25,7 @@ export default function LookbookPage() {
             <p className="dx-eyebrow">Lookbook · SS26</p>
             <p className="dx-meta dx-meta--ink dx-num">{LOOKS.length} looks · 1 weekend</p>
           </div>
-          <h1 className="dx-h1">Lookbook · Drop 01 — SS26</h1>
+          <h1 className="dx-h1">Lookbook</h1>
           <p className="dx-body" style={{ maxWidth: 640, marginTop: 16 }}>
             Eight looks shot across one weekend. No studio. No retouching the air out of it.
             The clothes, the bodies that wear them, the places they end up.
