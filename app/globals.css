@@ -571,26 +571,26 @@ button.btn {
 .dx-drawer__list li { margin: 0; }
 .dx-drawer__link {
   display: block;
-  font-family: "helvetica_neuethin", system-ui, sans-serif !important;
-  font-weight: 100 !important;
-  font-size: 16px !important;
+  font-family: "helvetica_neuelight", system-ui, sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 13px !important;
   line-height: 1.5 !important;
-  letter-spacing: 0.6px !important;
+  letter-spacing: 0.4px !important;
   color: #000 !important;
   text-transform: none;
-  padding: 12px 0;
+  padding: 10px 0;
   text-decoration: none;
   transition: opacity 160ms ease, padding-left 200ms ease;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 .dx-drawer__link:hover {
-  padding-left: 8px;
-  opacity: 0.7;
+  padding-left: 6px;
+  opacity: 0.6;
 }
 .dx-drawer__link--small {
-  font-size: 14px !important;
-  letter-spacing: 0.6px !important;
-  padding: 10px 0;
+  font-size: 12px !important;
+  letter-spacing: 0.4px !important;
+  padding: 8px 0;
 }
 .dx-drawer__list--small { gap: 0; }
 .dx-drawer__feature-card {
@@ -656,34 +656,33 @@ button.btn {
 .dx input::placeholder,
 .dx textarea::placeholder { color: rgba(0,0,0,0.45); }
 
-/* ---- Type scale — restrained pleasures-influenced, but H1 > body for sane hierarchy ---- */
-/* Page H1 — 28-40px thin, sits above body 16px */
+/* ---- Type scale — pleasures-faithful, all text shrunk to match small heads ---- */
 .dx .dx-h1 {
-  font-family: "helvetica_neuethin", system-ui, sans-serif;
-  font-weight: 100;
-  font-size: clamp(26px, 3.2vw, 40px);
-  line-height: 1.1;
-  letter-spacing: 0.2px;
+  font-family: "helvetica_neuemedium", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
   color: #000;
   margin: 0;
 }
-/* Section H2 — 20-26px thin */
 .dx .dx-h2 {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(20px, 2.2vw, 26px);
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.3;
   letter-spacing: 0.4px;
   color: #000;
   margin: 0;
 }
-/* Mega — emphatic moments only (about pull-quote, closing lines) */
+/* Mega — rare emphasis (about pull-quote, closing lines), now restrained */
 .dx .dx-mega {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(32px, 5vw, 64px);
-  line-height: 1.08;
-  letter-spacing: 0.2px;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.2;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #000;
   margin: 0;
@@ -691,8 +690,8 @@ button.btn {
 .dx .dx-xl {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(24px, 2.6vw, 32px);
-  line-height: 1.18;
+  font-size: 18px;
+  line-height: 1.25;
   letter-spacing: 0.2px;
   color: #000;
   margin: 0;
@@ -700,8 +699,8 @@ button.btn {
 .dx .dx-lg {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: clamp(18px, 1.8vw, 22px);
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.4;
   letter-spacing: 0.4px;
   color: #000;
   margin: 0;
@@ -709,8 +708,8 @@ button.btn {
 .dx .dx-md {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: 18px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.4;
   letter-spacing: 0.2px;
   color: #000;
   margin: 0;
@@ -739,8 +738,8 @@ button.btn {
 .dx .dx-body {
   font-family: "helvetica_neuelight", system-ui, sans-serif;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.7;
   letter-spacing: 0.2px;
   color: rgba(0,0,0,0.78);
   margin: 0;
@@ -748,8 +747,8 @@ button.btn {
 .dx .dx-body-lg {
   font-family: "helvetica_neuelight", system-ui, sans-serif;
   font-weight: 300;
-  font-size: clamp(18px, 1.6vw, 22px);
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.6;
   letter-spacing: 0.1px;
   color: rgba(0,0,0,0.85);
   margin: 0;
@@ -926,27 +925,27 @@ button.btn {
   padding-top: 14px;
 }
 .dx .dx-card__name {
-  font-family: "helvetica_neuemedium", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-family: "helvetica_neuelight", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  text-transform: none;
   color: #000;
 }
 .dx .dx-card__cat {
   font-family: "helvetica_neuelight", system-ui, sans-serif;
   font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 1.4px;
+  font-size: 10px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   color: rgba(0,0,0,0.55);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .dx .dx-card__price {
-  font-family: "helvetica_neuemedium", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.6px;
+  font-family: "helvetica_neuelight", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.4px;
   color: #000;
   font-variant-numeric: tabular-nums;
 }
@@ -1048,9 +1047,9 @@ button.btn {
 .dx-list__title {
   font-family: "helvetica_neuethin", system-ui, sans-serif;
   font-weight: 100;
-  font-size: 18px;
-  line-height: 1.3;
-  letter-spacing: 0.6px;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
   color: #000;
 }
 .dx-list__read { color: rgba(0,0,0,0.55); text-align: left; }
