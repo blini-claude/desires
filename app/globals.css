@@ -474,17 +474,16 @@ button.btn {
 }
 .link-grow:hover::after { transform: scaleX(1); transform-origin: left; }
 
-/* ---- Header takes light-bg treatment when a .dx page is in the tree ---- */
-body:has(.dx) .site-header {
+/* ---- Light header treatment for any non-home page ---- */
+.site-header[data-light="true"] {
   background: rgba(255,255,255,0.94) !important;
   backdrop-filter: blur(12px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
   border-bottom: 1px solid rgba(0,0,0,0.08) !important;
 }
-body:has(.dx) .site-header__link,
-body:has(.dx) .site-header__brand { color: #000 !important; }
-body:has(.dx) .site-header__menu-btn span { background: #000 !important; }
-body:has(.dx) main { padding-top: 0; }
+.site-header[data-light="true"] .site-header__link,
+.site-header[data-light="true"] .site-header__brand { color: #000 !important; }
+.site-header[data-light="true"] .site-header__menu-btn span { background: #000 !important; }
 
 /* ============================================================ */
 /*  .dx — non-home redesign scope                               */

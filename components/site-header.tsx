@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Wordmark } from "@/components/wordmark";
 
@@ -14,6 +15,8 @@ const NAV = [
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const lightBg = pathname !== "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -23,7 +26,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="site-header" data-scrolled={scrolled}>
+    <header className="site-header" data-scrolled={scrolled || lightBg} data-light={lightBg ? "true" : undefined}>
       <div className="site-header__inner">
         <button
           aria-label="Menu"
