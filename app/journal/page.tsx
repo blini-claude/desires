@@ -1,14 +1,7 @@
 import Link from "next/link";
+import { ENTRIES } from "@/lib/journal";
 
 export const metadata = { title: "Journal" };
-
-const ENTRIES = [
-  { slug: "drop-01-notes",   title: "Drop 01 — How It Was Cut",      date: "Apr 28, 2026", read: "4 min" },
-  { slug: "the-pattern-room", title: "Inside the Pattern Room",       date: "Apr 12, 2026", read: "6 min" },
-  { slug: "what-we-wear",     title: "What We Wear When We Make It",  date: "Mar 30, 2026", read: "3 min" },
-  { slug: "fabric-notes-01",  title: "Fabric Notes · Mid-Weight Cotton", date: "Mar 14, 2026", read: "5 min" },
-  { slug: "field-test",       title: "A Year in the Atlas Jacket",    date: "Feb 22, 2026", read: "7 min" },
-];
 
 export default function JournalPage() {
   return (
