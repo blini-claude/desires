@@ -67,7 +67,7 @@ export default async function ProductPage({
               {p.soldOut ? "Sold Out" : "Add to Bag"}
             </button>
 
-            <div style={{ marginTop: 40, borderTop: "1px solid #000", paddingTop: 24 }}>
+            <div style={{ marginTop: 40 }}>
               <p className="dx-body">
                 Cut and sewn in small batches. Garment-washed for hand-feel and a broken-in drape. Designed to wear loud and last long.
               </p>
@@ -86,14 +86,14 @@ export default async function ProductPage({
               </ul>
             </div>
 
-            <details style={{ marginTop: 28, borderTop: "1px solid #000", paddingTop: 16 }}>
+            <details style={{ marginTop: 28, paddingTop: 16 }}>
               <summary style={{ cursor: "pointer", listStyle: "none" }} className="dx-eyebrow">Shipping & Returns</summary>
               <p className="dx-body" style={{ marginTop: 12 }}>
                 Worldwide shipping. Free over $150. Returns accepted within 14 days, unworn, tags on.
               </p>
             </details>
 
-            <details style={{ marginTop: 8, borderTop: "1px solid #000", paddingTop: 16 }}>
+            <details style={{ marginTop: 8, paddingTop: 16 }}>
               <summary style={{ cursor: "pointer", listStyle: "none" }} className="dx-eyebrow">Fit & Care</summary>
               <p className="dx-body" style={{ marginTop: 12 }}>
                 Relaxed fit. Sized true. Cold wash inside-out, hang to dry. Iron low.

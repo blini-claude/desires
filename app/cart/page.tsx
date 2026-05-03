@@ -37,7 +37,7 @@ export default function CartPage() {
                   ["Sizing",         "Relaxed fit, sized true. Size guide on each piece."],
                   ["Drops",          "When it sells out, it's gone. We don't restock."],
                 ].map(([h, copy]) => (
-                  <div key={h} style={{ borderTop: "1px solid #000", paddingTop: 14 }}>
+                  <div key={h}>
                     <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)", marginBottom: 6 }}>{h}</p>
                     <p className="dx-body">{copy}</p>
                   </div>
@@ -56,7 +56,7 @@ export default function CartPage() {
                 ["Shipping", "—"],
                 ["Tax",      "—"],
               ].map(([k, v]) => (
-                <li key={k} style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid #000", paddingBottom: 10 }}>
+                <li key={k} style={{ display: "flex", justifyContent: "space-between", paddingBottom: 6 }}>
                   <span className="dx-eyebrow">{k}</span>
                   <span className="dx-body dx-num" style={{ color: "#000" }}>{v}</span>
                 </li>

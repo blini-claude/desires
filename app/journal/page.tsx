@@ -44,7 +44,8 @@ export default function JournalPage() {
             display: "flex",
             maxWidth: 460,
             margin: "28px auto 0",
-            borderBottom: "1px solid #000"
+            background: "#f6f5f3",
+            padding: "4px 8px",
           }}>
             <input
               type="email"

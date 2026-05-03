@@ -37,7 +37,7 @@ export default function AboutPage() {
               { label: "Press · Wholesale", value: <>hello@desires.today</> },
               { label: "Established", value: "2026" },
             ].map((row) => (
-              <div key={row.label} style={{ borderTop: "1px solid #000", paddingTop: 16 }}>
+              <div key={row.label} style={{ paddingTop: 4 }}>
                 <p className="dx-eyebrow" style={{ color: "rgba(0,0,0,0.55)", marginBottom: 8 }}>{row.label}</p>
                 <p className="dx-body dx-meta--ink" style={{ color: "#000" }}>{row.value}</p>
               </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 ["03", "We post it. We don't restock the same exact thing twice."],
                 ["04", "When it's gone, it's gone. The next thing is already in pattern."],
               ].map(([n, copy]) => (
-                <li key={n} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 16, alignItems: "baseline", borderTop: "1px solid #000", paddingTop: 16 }}>
+                <li key={n} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 16, alignItems: "baseline", paddingTop: 4 }}>
                   <span className="dx-md dx-num">{n}</span>
                   <span className="dx-body">{copy}</span>
                 </li>
@@ -86,7 +86,7 @@ export default function AboutPage() {
       <style>{`
         @media (min-width: 900px) {
           .dx-about-grid { grid-template-columns: 7fr 5fr !important; }
-          .dx-about-grid__meta { padding-left: clamp(24px, 4vw, 56px); border-left: 1px solid #000; }
+          .dx-about-grid__meta { padding-left: clamp(24px, 4vw, 56px); }
         }
       `}</style>
     </section>

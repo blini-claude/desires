@@ -509,15 +509,15 @@ button.btn {
   left: 0;
   bottom: 0;
   z-index: 70;
-  width: min(540px, 92vw);
+  width: min(420px, 92vw);
   background: #fff;
   color: #000;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #000;
   transform: translateX(-100%);
   transition: transform 360ms cubic-bezier(.2,.7,.2,1);
   font-variant-numeric: tabular-nums;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.06);
 }
 .dx-drawer[data-open="true"] {
   transform: translateX(0);
@@ -527,7 +527,6 @@ button.btn {
   align-items: center;
   justify-content: space-between;
   padding: 18px 26px;
-  border-bottom: 1px solid #000;
   min-height: 60px;
 }
 .dx-drawer__close {
@@ -556,10 +555,8 @@ button.btn {
   .dx-drawer__inner { grid-template-columns: 1fr 1fr; }
 }
 .dx-drawer__heading {
-  color: rgba(0,0,0,0.55) !important;
+  color: rgba(0,0,0,0.45) !important;
   margin-bottom: 14px !important;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 .dx-drawer__list {
   list-style: none;
@@ -578,10 +575,9 @@ button.btn {
   letter-spacing: 0.4px !important;
   color: #000 !important;
   text-transform: none;
-  padding: 10px 0;
+  padding: 8px 0;
   text-decoration: none;
   transition: opacity 160ms ease, padding-left 200ms ease;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 .dx-drawer__link:hover {
   padding-left: 6px;
@@ -624,7 +620,7 @@ button.btn {
   background: rgba(255,255,255,0.94) !important;
   backdrop-filter: blur(12px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
-  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  border-bottom: 0 !important;
 }
 .site-header[data-light="true"] .site-header__link,
 .site-header[data-light="true"] .site-header__brand { color: #000 !important; }
@@ -651,8 +647,7 @@ button.btn {
 .dx .dx-btn--solid,
 .dx .dx-card__badge,
 .dx .dx-card__sold,
-.dx .dx-rail__cell[aria-pressed="true"],
-.dx .dx-filter__btn[aria-pressed="true"] { color: #fff; }
+.dx .dx-rail__cell[aria-pressed="true"] { color: #fff; }
 .dx input::placeholder,
 .dx textarea::placeholder { color: rgba(0,0,0,0.45); }
 
@@ -831,9 +826,8 @@ button.btn {
 .dx-page__head {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 8px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #000;
+  row-gap: 10px;
+  padding-bottom: 36px;
 }
 .dx-page__eyebrow-row {
   display: flex;
@@ -843,21 +837,20 @@ button.btn {
   flex-wrap: wrap;
 }
 
-/* ---- Hairline rail (size grid, qty stepper, etc) ---- */
+/* ---- Size selector (no borders, soft fills on hover/active) ---- */
 .dx .dx-rail {
   display: inline-flex;
-  border: 1px solid #000;
+  gap: 8px;
 }
-.dx .dx-rail > * + * { border-left: 1px solid #000; }
 .dx .dx-rail__cell {
   appearance: none;
-  background: transparent;
+  background: #f6f5f3;
   border: 0;
   color: #000;
   font-family: "helvetica_neuemedium", system-ui, sans-serif;
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 1.2px;
+  font-size: 12px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   padding: 14px 0;
   cursor: pointer;
@@ -868,18 +861,18 @@ button.btn {
 .dx .dx-rail__cell:hover:not(:disabled) { background: #000; color: #fff; }
 .dx .dx-rail__cell[aria-pressed="true"] { background: #000; color: #fff; }
 .dx .dx-rail__cell:disabled {
-  color: rgba(0,0,0,0.3);
+  background: transparent;
+  color: rgba(0,0,0,0.25);
   text-decoration: line-through;
   cursor: not-allowed;
 }
-.dx .dx-rail--6 { display: grid; grid-template-columns: repeat(6, 1fr); width: 100%; }
-.dx .dx-rail--6 > * + * { border-left: 1px solid #000; }
+.dx .dx-rail--6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; width: 100%; }
 
 /* ---- Product card override (monochrome, tighter) ---- */
 .dx .dx-card { display: block; color: #000; }
 .dx .dx-card__media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: #f1f1f1;
 }
@@ -965,14 +958,12 @@ button.btn {
 }
 .dx .dx-grid-shop .dx-card__media { background: #f6f5f3; }
 
-/* ---- Sticky filter bar ---- */
+/* ---- Sticky filter bar (no borders, spacing instead) ---- */
 .dx-filter {
   position: sticky;
   top: 60px;
   z-index: 5;
   background: #fff;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
   margin: 0;
 }
 @media (max-width: 768px) {
@@ -980,64 +971,60 @@ button.btn {
 }
 .dx-filter__inner {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  gap: clamp(16px, 2vw, 32px);
   overflow-x: auto;
   scrollbar-width: none;
+  padding: 18px 0;
 }
 .dx-filter__inner::-webkit-scrollbar { display: none; }
 .dx-filter__btn {
   appearance: none;
   background: transparent;
   border: 0;
-  border-right: 1px solid #000;
-  padding: 14px 18px;
+  padding: 0;
   font-family: "helvetica_neuemedium", system-ui, sans-serif;
   font-size: 11px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.55);
+  color: rgba(0,0,0,0.45);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 160ms ease, color 160ms ease;
+  transition: color 160ms ease;
 }
 .dx-filter__btn:hover { color: #000; }
-.dx-filter__btn[aria-pressed="true"] { background: #000; color: #fff; }
+.dx-filter__btn[aria-pressed="true"] { color: #000; }
 .dx-filter__count {
   margin-left: auto;
-  padding: 14px 18px;
+  padding: 0;
   font-family: "helvetica_neuemedium", system-ui, sans-serif;
   font-size: 11px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #000;
+  color: rgba(0,0,0,0.45);
   font-variant-numeric: tabular-nums;
-  border-left: 1px solid #000;
   white-space: nowrap;
 }
 
 /* ---- Editorial list (journal) ---- */
-.dx-list { border-top: 1px solid #000; }
+.dx-list { display: grid; gap: 24px; }
 .dx-list__row {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 8px;
+  row-gap: 6px;
   align-items: baseline;
-  padding: 28px 0;
-  border-bottom: 1px solid #000;
+  padding: 12px 0;
   position: relative;
-  transition: background 240ms ease, color 240ms ease, padding 240ms ease;
+  transition: padding-left 200ms ease, opacity 160ms ease;
 }
 .dx-list__row a { display: contents; }
 @media (min-width: 768px) {
   .dx-list__row {
     grid-template-columns: 140px 1fr 120px;
     column-gap: 32px;
-    padding: 36px 16px;
+    padding: 18px 0;
   }
-  .dx-list__row:hover { background: #000; color: #fff; padding-left: 32px; }
-  .dx-list__row:hover .dx-list__title,
-  .dx-list__row:hover .dx-list__date,
-  .dx-list__row:hover .dx-list__read { color: #fff; }
+  .dx-list__row:hover { padding-left: 12px; opacity: 0.65; }
 }
 .dx-list__date { color: rgba(0,0,0,0.55); }
 .dx-list__title {
@@ -1126,16 +1113,13 @@ button.btn {
 .dx-pdp__gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: #000;
-  border: 1px solid #000;
+  gap: clamp(10px, 1vw, 18px);
 }
-.dx-pdp__gallery > * { background: #fff; }
 @media (min-width: 700px) {
   .dx-pdp__gallery { grid-template-columns: 1fr 1fr; }
 }
 .dx-pdp__shot {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   background: #f6f5f3;
   overflow: hidden;
 }
@@ -1156,16 +1140,14 @@ button.btn {
 @media (min-width: 900px) {
   .dx-cart { grid-template-columns: 1fr 360px; }
 }
-.dx-cart__items { border-top: 1px solid #000; border-bottom: 1px solid #000; }
+.dx-cart__items { display: grid; gap: 24px; }
 .dx-cart__row {
   display: grid;
   grid-template-columns: 80px 1fr auto;
   gap: 20px;
-  padding: 22px 0;
+  padding: 0;
   align-items: center;
-  border-bottom: 1px solid #000;
 }
-.dx-cart__row:last-child { border-bottom: 0; }
 @media (min-width: 700px) {
   .dx-cart__row { grid-template-columns: 110px 1fr auto auto; }
 }
@@ -1173,15 +1155,15 @@ button.btn {
 .dx-cart__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .dx-cart__summary {
   align-self: start;
-  border: 1px solid #000;
-  padding: 28px;
+  background: #f6f5f3;
+  padding: 32px;
 }
 @media (min-width: 900px) {
   .dx-cart__summary { position: sticky; top: 88px; }
 }
 
 /* ---- Helpers ---- */
-.dx-divider { height: 1px; background: #000; margin: clamp(40px, 6vw, 80px) 0; border: 0; }
+.dx-divider { height: 0; margin: clamp(60px, 8vw, 120px) 0; border: 0; }
 .dx-bleed-quote {
   text-align: center;
   padding: clamp(60px, 10vw, 140px) 0;
