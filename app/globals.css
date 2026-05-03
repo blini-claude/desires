@@ -1195,8 +1195,6 @@ button.btn {
   0%   { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-33.333%, 0, 0); }
 }
-body:has(.dx) .site-header { top: 32px !important; }
-.site-header { transition: top 220ms ease, background 220ms ease, color 220ms ease, backdrop-filter 220ms ease !important; }
 
 /* ---- Sort dropdown ---- */
 .dx-sort__list {
