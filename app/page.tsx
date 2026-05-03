@@ -49,27 +49,6 @@ export default function HomePage() {
   return (
     <>
       <HeroCarousel slides={HERO_SLIDES} />
-
-      <section id="signup" className="pw" style={{ paddingTop: 100, paddingBottom: 100, textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
-        <p className="vc-desc" style={{ color: "rgba(0,0,0,0.55)", textTransform: "uppercase" }}>
-          Get on the list
-        </p>
-        <h2 className="vc-title" style={{ color: "#000", marginTop: 8 }}>Drops First. No Noise.</h2>
-        <form className="mt-8 mx-auto flex border-b border-line" action="#" method="post" style={{ maxWidth: 420 }}>
-          <input
-            type="email"
-            required
-            placeholder="email@yours.com"
-            className="flex-1 bg-transparent py-3 outline-none"
-          />
-          <button type="submit" style={{ padding: "12px 18px", textTransform: "uppercase", color: "#000" }}>
-            Sign Up →
-          </button>
-        </form>
-        <p className="mt-4" style={{ color: "rgba(0,0,0,0.55)" }}>
-          One mail per drop. Unsubscribe in two clicks.
-        </p>
-      </section>
     </>
   );
 }
