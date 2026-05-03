@@ -1,5 +1,7 @@
 import type { Product } from "@/components/product-card";
 
+export type { Product };
+
 const ph = (text: string, bg = "1a1a1a", fg = "f1ece1") =>
   `https://placehold.co/800x1000/${bg}/${fg}/png?text=${encodeURIComponent(text)}&font=oswald`;
 
